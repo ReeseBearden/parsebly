@@ -14,15 +14,22 @@ expr: expr ('*' | '/') expr
 
 
 
-variable: ID '=' (STRING | INT)
+variable: ID '=' (STRING | INT | FLOAT)
+        | ID '=' CAST '(' (STRING | INT | FLOAT) ')'
         | WS
         ;
 
 printRule: 'print(' expr ')';
 
 NEWLINE : [\n]+;
-STRING  : '"' ~('"')+ '"';
+CAST    : 'str'
+        | 'int'
+        | 'float'
+        ;
 
 INT     : [0-9]+;
-ID     : [a-zA-Z0-9]+;
-WS     : [ \t\r\n]+ -> skip;
+FLOAT   : INT '.' INT;
+STRING  : '"' ~('"')+ '"';
+
+ID      : [a-zA-Z0-9]+;
+WS      : [ \t\r\n]+ -> skip;
