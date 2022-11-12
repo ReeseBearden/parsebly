@@ -7,7 +7,7 @@ start: ((variable | expr) NEWLINE)*;
 expr: expr ('*' | '/') expr
     | expr ('+' | '-') expr
     | expr ('=' | '+=') expr
-    | expr ('-=' | '*=' | '/=') expr 
+    | expr ('-=' | '*=') expr 
     | INT
     | '(' expr ')'
     | printRule;
