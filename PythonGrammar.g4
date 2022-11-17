@@ -27,7 +27,13 @@ CAST    : 'str'
 
 INT     : [0-9]+;
 FLOAT   : INT '.' INT;
-STRING  : '"' ~('"')+ '"';
+
+STRING  : DSTRING
+        | SSTRING
+        ;
+
+DSTRING  : '"' ~('"')+ '"';
+SSTRING  : '\'' ~('\'')+ '\'';
 
 ID      : [a-zA-Z0-9]+;
 WS      : [ \t\r\n]+ -> skip;
