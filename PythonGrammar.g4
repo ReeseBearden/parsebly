@@ -24,11 +24,9 @@ printRule: 'print(' expr ')';
 conds: (STR | INT | FLOAT | CHAR) ('>' | '<' | '>=' | '<=' | '==' | '!=' | '&&' | '||' | '!' | ' > ' | ' < ' | ' >= ' | ' <= ' | ' == ' | ' != ' | ' && ' | ' || ' | ' !') (STR | INT | FLOAT | CHAR)
 	;
 
-ifblock : 'if ' conds ':'
-        | 'if ' conds ':' NL '    ' (expr | variable | conds)  NL 'else:' NL '    ' (expr | variable | conds)
+ifblock : 'if ' conds ':' NEWLINE '    ' (expr | variable | conds)
 	; 
-
-
+elseblock : 'else:' NEWLINE '    ' (expr | variable | conds) ;
 
 NEWLINE : [\n]+;
 CAST    : 'str'
@@ -50,7 +48,6 @@ STRING  : DSTRING
 DSTRING  : '"' ~('"')+ '"';
 SSTRING  : '\'' ~('\'')+ '\'';
 
-NL	: [\n];
 STR	: [a-zA-Z]+;
 ID      : [a-zA-Z0-9]+;
 WS      : [ \t\r\n]+ -> skip;

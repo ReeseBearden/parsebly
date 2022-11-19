@@ -82,6 +82,18 @@ public class PythonGrammarBaseListener implements PythonGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIfblock(PythonGrammarParser.IfblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterElseblock(PythonGrammarParser.ElseblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitElseblock(PythonGrammarParser.ElseblockContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
