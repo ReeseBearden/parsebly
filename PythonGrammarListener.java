@@ -66,14 +66,4 @@ public interface PythonGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIfblock(PythonGrammarParser.IfblockContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link PythonGrammarParser#elseblock}.
-	 * @param ctx the parse tree
-	 */
-	void enterElseblock(PythonGrammarParser.ElseblockContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PythonGrammarParser#elseblock}.
-	 * @param ctx the parse tree
-	 */
-	void exitElseblock(PythonGrammarParser.ElseblockContext ctx);
 }

@@ -21,14 +21,17 @@ variable: ID '=' (STRING | INT | FLOAT)
 printRule: 'print(' expr ')';
 
 
+
 conds: (STR | INT | FLOAT | CHAR) ('>' | '<' | '>=' | '<=' | '==' | '!=' | '&&' | '||' | '!' | ' > ' | ' < ' | ' >= ' | ' <= ' | ' == ' | ' != ' | ' && ' | ' || ' | ' !') (STR | INT | FLOAT | CHAR)
 	| '('(STR | INT | FLOAT | CHAR) ('>' | '<' | '>=' | '<=' | '==' | '!=' | '&&' | '||' | '!' | ' > ' | ' < ' | ' >= ' | ' <= ' | ' == ' | ' != ' | ' && ' | ' || ' | ' !') (STR | INT | FLOAT | CHAR)')'
 	;
 
+
 ifblock : 'if ' conds ':' NEWLINE TAB (expr | variable | conds) NEWLINE 'else:' NEWLINE TAB (expr | variable | conds)
+	| 'if ' conds ':' NEWLINE TAB (expr | variable | conds)
 	;
 
-elseblock : 'else:' NEWLINE '    ' (expr | variable | conds) ;
+
 
 NEWLINE : [\n]+;
 CAST    : 'str'
