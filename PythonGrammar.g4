@@ -22,10 +22,12 @@ printRule: 'print(' expr ')';
 
 
 conds: (STR | INT | FLOAT | CHAR) ('>' | '<' | '>=' | '<=' | '==' | '!=' | '&&' | '||' | '!' | ' > ' | ' < ' | ' >= ' | ' <= ' | ' == ' | ' != ' | ' && ' | ' || ' | ' !') (STR | INT | FLOAT | CHAR)
+	| '('(STR | INT | FLOAT | CHAR) ('>' | '<' | '>=' | '<=' | '==' | '!=' | '&&' | '||' | '!' | ' > ' | ' < ' | ' >= ' | ' <= ' | ' == ' | ' != ' | ' && ' | ' || ' | ' !') (STR | INT | FLOAT | CHAR)')'
 	;
 
-ifblock : 'if ' conds ':' NEWLINE '    ' (expr | variable | conds)
-	; 
+ifblock : 'if ' conds ':' NEWLINE TAB (expr | variable | conds) NEWLINE 'else:' NEWLINE TAB (expr | variable | conds)
+	;
+
 elseblock : 'else:' NEWLINE '    ' (expr | variable | conds) ;
 
 NEWLINE : [\n]+;
@@ -50,5 +52,6 @@ SSTRING  : '\'' ~('\'')+ '\'';
 
 STR	: [a-zA-Z]+;
 ID      : [a-zA-Z0-9]+;
-WS      : [ \t\r\n]+ -> skip;
+TAB	: [\t]+;
+WS      : [ \r\n]+ -> skip;
 

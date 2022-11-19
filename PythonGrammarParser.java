@@ -23,7 +23,7 @@ public class PythonGrammarParser extends Parser {
 		T__31=32, T__32=33, T__33=34, T__34=35, T__35=36, T__36=37, T__37=38, 
 		T__38=39, T__39=40, T__40=41, T__41=42, T__42=43, T__43=44, T__44=45, 
 		NEWLINE=46, CAST=47, CHAR=48, INT=49, FLOAT=50, STRING=51, DSTRING=52, 
-		SSTRING=53, STR=54, ID=55, WS=56;
+		SSTRING=53, STR=54, ID=55, TAB=56, WS=57;
 	public static final int
 		RULE_start = 0, RULE_expr = 1, RULE_variable = 2, RULE_printRule = 3, 
 		RULE_conds = 4, RULE_ifblock = 5, RULE_elseblock = 6;
@@ -40,8 +40,8 @@ public class PythonGrammarParser extends Parser {
 			"' % '", "'='", "'+='", "'-='", "'*='", "'/='", "' = '", "' += '", "' -= '", 
 			"' *= '", "' /= '", "'('", "')'", "'print('", "'>'", "'<'", "'>='", "'<='", 
 			"'=='", "'!='", "'&&'", "'||'", "'!'", "' > '", "' < '", "' >= '", "' <= '", 
-			"' == '", "' != '", "' && '", "' || '", "' !'", "'if '", "':'", "'    '", 
-			"'else:'"
+			"' == '", "' != '", "' && '", "' || '", "' !'", "'if '", "':'", "'else:'", 
+			"'    '"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
@@ -52,7 +52,7 @@ public class PythonGrammarParser extends Parser {
 			null, null, null, null, null, null, null, null, null, null, null, null, 
 			null, null, null, null, null, null, null, null, null, null, "NEWLINE", 
 			"CAST", "CHAR", "INT", "FLOAT", "STRING", "DSTRING", "SSTRING", "STR", 
-			"ID", "WS"
+			"ID", "TAB", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -505,38 +505,88 @@ public class PythonGrammarParser extends Parser {
 		enterRule(_localctx, 8, RULE_conds);
 		int _la;
 		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(61);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHAR) | (1L << INT) | (1L << FLOAT) | (1L << STR))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			setState(62);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
-			setState(63);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHAR) | (1L << INT) | (1L << FLOAT) | (1L << STR))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			else {
-				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
-				_errHandler.reportMatch(this);
-				consume();
-			}
+			setState(69);
+			_errHandler.sync(this);
+			switch (_input.LA(1)) {
+			case CHAR:
+			case INT:
+			case FLOAT:
+			case STR:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(61);
+				_la = _input.LA(1);
+				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHAR) | (1L << INT) | (1L << FLOAT) | (1L << STR))) != 0)) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(62);
+				_la = _input.LA(1);
+				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40))) != 0)) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(63);
+				_la = _input.LA(1);
+				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHAR) | (1L << INT) | (1L << FLOAT) | (1L << STR))) != 0)) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				}
+				break;
+			case T__20:
+				enterOuterAlt(_localctx, 2);
+				{
+				setState(64);
+				match(T__20);
+				setState(65);
+				_la = _input.LA(1);
+				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHAR) | (1L << INT) | (1L << FLOAT) | (1L << STR))) != 0)) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(66);
+				_la = _input.LA(1);
+				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__23) | (1L << T__24) | (1L << T__25) | (1L << T__26) | (1L << T__27) | (1L << T__28) | (1L << T__29) | (1L << T__30) | (1L << T__31) | (1L << T__32) | (1L << T__33) | (1L << T__34) | (1L << T__35) | (1L << T__36) | (1L << T__37) | (1L << T__38) | (1L << T__39) | (1L << T__40))) != 0)) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(67);
+				_la = _input.LA(1);
+				if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CHAR) | (1L << INT) | (1L << FLOAT) | (1L << STR))) != 0)) ) {
+				_errHandler.recoverInline(this);
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
+					consume();
+				}
+				setState(68);
+				match(T__21);
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -561,11 +611,21 @@ public class PythonGrammarParser extends Parser {
 		public TerminalNode NEWLINE(int i) {
 			return getToken(PythonGrammarParser.NEWLINE, i);
 		}
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
+		public List<TerminalNode> TAB() { return getTokens(PythonGrammarParser.TAB); }
+		public TerminalNode TAB(int i) {
+			return getToken(PythonGrammarParser.TAB, i);
 		}
-		public VariableContext variable() {
-			return getRuleContext(VariableContext.class,0);
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public List<VariableContext> variable() {
+			return getRuleContexts(VariableContext.class);
+		}
+		public VariableContext variable(int i) {
+			return getRuleContext(VariableContext.class,i);
 		}
 		public IfblockContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -585,59 +645,70 @@ public class PythonGrammarParser extends Parser {
 		IfblockContext _localctx = new IfblockContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_ifblock);
 		try {
-			setState(81);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(71);
+			match(T__41);
+			setState(72);
+			conds();
+			setState(73);
+			match(T__42);
+			setState(74);
+			match(NEWLINE);
+			setState(75);
+			match(TAB);
+			setState(79);
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
-				enterOuterAlt(_localctx, 1);
 				{
-				setState(65);
-				match(T__41);
-				setState(66);
-				conds();
-				setState(67);
-				match(T__42);
+				setState(76);
+				expr(0);
 				}
 				break;
 			case 2:
-				enterOuterAlt(_localctx, 2);
 				{
-				setState(69);
-				match(T__41);
-				setState(70);
-				conds();
-				setState(71);
-				match(T__42);
-				setState(72);
-				match(NEWLINE);
-				setState(73);
-				match(T__43);
 				setState(77);
-				_errHandler.sync(this);
-				switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
-				case 1:
-					{
-					setState(74);
-					expr(0);
-					}
-					break;
-				case 2:
-					{
-					setState(75);
-					variable();
-					}
-					break;
-				case 3:
-					{
-					setState(76);
-					conds();
-					}
-					break;
-				}
-				setState(79);
-				match(NEWLINE);
+				variable();
 				}
 				break;
+			case 3:
+				{
+				setState(78);
+				conds();
+				}
+				break;
+			}
+			setState(81);
+			match(NEWLINE);
+			setState(82);
+			match(T__43);
+			setState(83);
+			match(NEWLINE);
+			setState(84);
+			match(TAB);
+			setState(88);
+			_errHandler.sync(this);
+			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
+			case 1:
+				{
+				setState(85);
+				expr(0);
+				}
+				break;
+			case 2:
+				{
+				setState(86);
+				variable();
+				}
+				break;
+			case 3:
+				{
+				setState(87);
+				conds();
+				}
+				break;
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -682,30 +753,30 @@ public class PythonGrammarParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(83);
-			match(T__44);
-			setState(84);
-			match(NEWLINE);
-			setState(85);
+			setState(90);
 			match(T__43);
-			setState(89);
+			setState(91);
+			match(NEWLINE);
+			setState(92);
+			match(T__44);
+			setState(96);
 			_errHandler.sync(this);
-			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
+			switch ( getInterpreter().adaptivePredict(_input,9,_ctx) ) {
 			case 1:
 				{
-				setState(86);
+				setState(93);
 				expr(0);
 				}
 				break;
 			case 2:
 				{
-				setState(87);
+				setState(94);
 				variable();
 				}
 				break;
 			case 3:
 				{
-				setState(88);
+				setState(95);
 				conds();
 				}
 				break;
@@ -741,30 +812,32 @@ public class PythonGrammarParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3:^\4\2\t\2\4\3\t\3"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3;e\4\2\t\2\4\3\t\3"+
 		"\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\3\2\3\2\5\2\23\n\2\3\2\3\2\7"+
 		"\2\27\n\2\f\2\16\2\32\13\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3\5\3#\n\3\3\3\3"+
 		"\3\3\3\3\3\3\3\3\3\7\3+\n\3\f\3\16\3.\13\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
-		"\3\4\3\4\3\4\5\4:\n\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\7\3\7\3\7\3\7"+
-		"\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\5\7P\n\7\3\7\3\7\5\7T\n\7\3\b\3\b\3\b"+
-		"\3\b\3\b\3\b\5\b\\\n\b\3\b\2\3\4\t\2\4\6\b\n\f\16\2\7\3\2\3\f\3\2\r\26"+
-		"\3\2\63\65\4\2\62\6488\3\2\32+\2c\2\30\3\2\2\2\4\"\3\2\2\2\69\3\2\2\2"+
-		"\b;\3\2\2\2\n?\3\2\2\2\fS\3\2\2\2\16U\3\2\2\2\20\23\5\6\4\2\21\23\5\4"+
-		"\3\2\22\20\3\2\2\2\22\21\3\2\2\2\23\24\3\2\2\2\24\25\7\60\2\2\25\27\3"+
-		"\2\2\2\26\22\3\2\2\2\27\32\3\2\2\2\30\26\3\2\2\2\30\31\3\2\2\2\31\3\3"+
-		"\2\2\2\32\30\3\2\2\2\33\34\b\3\1\2\34#\7\63\2\2\35\36\7\27\2\2\36\37\5"+
-		"\4\3\2\37 \7\30\2\2 #\3\2\2\2!#\5\b\5\2\"\33\3\2\2\2\"\35\3\2\2\2\"!\3"+
-		"\2\2\2#,\3\2\2\2$%\f\7\2\2%&\t\2\2\2&+\5\4\3\b\'(\f\6\2\2()\t\3\2\2)+"+
-		"\5\4\3\7*$\3\2\2\2*\'\3\2\2\2+.\3\2\2\2,*\3\2\2\2,-\3\2\2\2-\5\3\2\2\2"+
-		".,\3\2\2\2/\60\79\2\2\60\61\7\r\2\2\61:\t\4\2\2\62\63\79\2\2\63\64\7\r"+
-		"\2\2\64\65\7\61\2\2\65\66\7\27\2\2\66\67\t\4\2\2\67:\7\30\2\28:\7:\2\2"+
-		"9/\3\2\2\29\62\3\2\2\298\3\2\2\2:\7\3\2\2\2;<\7\31\2\2<=\5\4\3\2=>\7\30"+
-		"\2\2>\t\3\2\2\2?@\t\5\2\2@A\t\6\2\2AB\t\5\2\2B\13\3\2\2\2CD\7,\2\2DE\5"+
-		"\n\6\2EF\7-\2\2FT\3\2\2\2GH\7,\2\2HI\5\n\6\2IJ\7-\2\2JK\7\60\2\2KO\7."+
-		"\2\2LP\5\4\3\2MP\5\6\4\2NP\5\n\6\2OL\3\2\2\2OM\3\2\2\2ON\3\2\2\2PQ\3\2"+
-		"\2\2QR\7\60\2\2RT\3\2\2\2SC\3\2\2\2SG\3\2\2\2T\r\3\2\2\2UV\7/\2\2VW\7"+
-		"\60\2\2W[\7.\2\2X\\\5\4\3\2Y\\\5\6\4\2Z\\\5\n\6\2[X\3\2\2\2[Y\3\2\2\2"+
-		"[Z\3\2\2\2\\\17\3\2\2\2\13\22\30\"*,9OS[";
+		"\3\4\3\4\3\4\5\4:\n\4\3\5\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\3\6\3\6\3\6"+
+		"\5\6H\n\6\3\7\3\7\3\7\3\7\3\7\3\7\3\7\3\7\5\7R\n\7\3\7\3\7\3\7\3\7\3\7"+
+		"\3\7\3\7\5\7[\n\7\3\b\3\b\3\b\3\b\3\b\3\b\5\bc\n\b\3\b\2\3\4\t\2\4\6\b"+
+		"\n\f\16\2\7\3\2\3\f\3\2\r\26\3\2\63\65\4\2\62\6488\3\2\32+\2l\2\30\3\2"+
+		"\2\2\4\"\3\2\2\2\69\3\2\2\2\b;\3\2\2\2\nG\3\2\2\2\fI\3\2\2\2\16\\\3\2"+
+		"\2\2\20\23\5\6\4\2\21\23\5\4\3\2\22\20\3\2\2\2\22\21\3\2\2\2\23\24\3\2"+
+		"\2\2\24\25\7\60\2\2\25\27\3\2\2\2\26\22\3\2\2\2\27\32\3\2\2\2\30\26\3"+
+		"\2\2\2\30\31\3\2\2\2\31\3\3\2\2\2\32\30\3\2\2\2\33\34\b\3\1\2\34#\7\63"+
+		"\2\2\35\36\7\27\2\2\36\37\5\4\3\2\37 \7\30\2\2 #\3\2\2\2!#\5\b\5\2\"\33"+
+		"\3\2\2\2\"\35\3\2\2\2\"!\3\2\2\2#,\3\2\2\2$%\f\7\2\2%&\t\2\2\2&+\5\4\3"+
+		"\b\'(\f\6\2\2()\t\3\2\2)+\5\4\3\7*$\3\2\2\2*\'\3\2\2\2+.\3\2\2\2,*\3\2"+
+		"\2\2,-\3\2\2\2-\5\3\2\2\2.,\3\2\2\2/\60\79\2\2\60\61\7\r\2\2\61:\t\4\2"+
+		"\2\62\63\79\2\2\63\64\7\r\2\2\64\65\7\61\2\2\65\66\7\27\2\2\66\67\t\4"+
+		"\2\2\67:\7\30\2\28:\7;\2\29/\3\2\2\29\62\3\2\2\298\3\2\2\2:\7\3\2\2\2"+
+		";<\7\31\2\2<=\5\4\3\2=>\7\30\2\2>\t\3\2\2\2?@\t\5\2\2@A\t\6\2\2AH\t\5"+
+		"\2\2BC\7\27\2\2CD\t\5\2\2DE\t\6\2\2EF\t\5\2\2FH\7\30\2\2G?\3\2\2\2GB\3"+
+		"\2\2\2H\13\3\2\2\2IJ\7,\2\2JK\5\n\6\2KL\7-\2\2LM\7\60\2\2MQ\7:\2\2NR\5"+
+		"\4\3\2OR\5\6\4\2PR\5\n\6\2QN\3\2\2\2QO\3\2\2\2QP\3\2\2\2RS\3\2\2\2ST\7"+
+		"\60\2\2TU\7.\2\2UV\7\60\2\2VZ\7:\2\2W[\5\4\3\2X[\5\6\4\2Y[\5\n\6\2ZW\3"+
+		"\2\2\2ZX\3\2\2\2ZY\3\2\2\2[\r\3\2\2\2\\]\7.\2\2]^\7\60\2\2^b\7/\2\2_c"+
+		"\5\4\3\2`c\5\6\4\2ac\5\n\6\2b_\3\2\2\2b`\3\2\2\2ba\3\2\2\2c\17\3\2\2\2"+
+		"\f\22\30\"*,9GQZb";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
