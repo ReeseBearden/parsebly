@@ -27,6 +27,18 @@ public class PythonGrammarBaseListener implements PythonGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterBlock(PythonGrammarParser.BlockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBlock(PythonGrammarParser.BlockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpr(PythonGrammarParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -82,6 +94,30 @@ public class PythonGrammarBaseListener implements PythonGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIfblock(PythonGrammarParser.IfblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterWhileblock(PythonGrammarParser.WhileblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitWhileblock(PythonGrammarParser.WhileblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterForblock(PythonGrammarParser.ForblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitForblock(PythonGrammarParser.ForblockContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

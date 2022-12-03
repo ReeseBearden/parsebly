@@ -17,6 +17,16 @@ public interface PythonGrammarListener extends ParseTreeListener {
 	 */
 	void exitStart(PythonGrammarParser.StartContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void enterBlock(PythonGrammarParser.BlockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#block}.
+	 * @param ctx the parse tree
+	 */
+	void exitBlock(PythonGrammarParser.BlockContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PythonGrammarParser#expr}.
 	 * @param ctx the parse tree
 	 */
@@ -66,4 +76,24 @@ public interface PythonGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIfblock(PythonGrammarParser.IfblockContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#whileblock}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhileblock(PythonGrammarParser.WhileblockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#whileblock}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhileblock(PythonGrammarParser.WhileblockContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#forblock}.
+	 * @param ctx the parse tree
+	 */
+	void enterForblock(PythonGrammarParser.ForblockContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#forblock}.
+	 * @param ctx the parse tree
+	 */
+	void exitForblock(PythonGrammarParser.ForblockContext ctx);
 }

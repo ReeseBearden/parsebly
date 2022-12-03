@@ -8,6 +8,15 @@ else:
 # This class defines a complete listener for a parse tree produced by PythonGrammarParser.
 class PythonGrammarListener(ParseTreeListener):
 
+    # Enter a parse tree produced by PythonGrammarParser#block.
+    def enterBlock(self, ctx:PythonGrammarParser.BlockContext):
+        pass
+
+    # Exit a parse tree produced by PythonGrammarParser#block.
+    def exitBlock(self, ctx:PythonGrammarParser.BlockContext):
+        pass
+
+
     # Enter a parse tree produced by PythonGrammarParser#start.
     def enterStart(self, ctx:PythonGrammarParser.StartContext):
         pass
@@ -41,6 +50,33 @@ class PythonGrammarListener(ParseTreeListener):
 
     # Exit a parse tree produced by PythonGrammarParser#printRule.
     def exitPrintRule(self, ctx:PythonGrammarParser.PrintRuleContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonGrammarParser#conds.
+    def enterConds(self, ctx:PythonGrammarParser.CondsContext):
+        pass
+
+    # Exit a parse tree produced by PythonGrammarParser#conds.
+    def exitConds(self, ctx:PythonGrammarParser.CondsContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonGrammarParser#ifblock.
+    def enterIfblock(self, ctx:PythonGrammarParser.IfblockContext):
+        pass
+
+    # Exit a parse tree produced by PythonGrammarParser#ifblock.
+    def exitIfblock(self, ctx:PythonGrammarParser.IfblockContext):
+        pass
+
+
+    # Enter a parse tree produced by PythonGrammarParser#whileBlock.
+    def enterWhileBlock(self, ctx:PythonGrammarParser.WhileBlockContext):
+        pass
+
+    # Exit a parse tree produced by PythonGrammarParser#whileBlock.
+    def exitWhileBlock(self, ctx:PythonGrammarParser.WhileBlockContext):
         pass
 
 
