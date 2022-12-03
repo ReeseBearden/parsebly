@@ -13,8 +13,12 @@ if var1 > var2:
     print(4)
 elif var1 == var1:
     print(6)
+    var2=var3
 elif var1 == var2:
     print(7)
+    var2=var3
+    var2=var3
+    var2=var3
 else:
     print(8)
 while var1    > 1:

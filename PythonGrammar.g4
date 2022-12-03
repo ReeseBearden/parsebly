@@ -37,14 +37,14 @@ conds
 	;
 
 ifblock
-    : 'if' space conds ':' newline tab block
-    | 'if' space conds ':' newline tab block newline elseblock
+    : 'if' space conds ':' (newline tab block)+
+    | 'if' space conds ':' (newline tab block)+ newline elseblock
     ;
 
 elseblock
-    : 'elif' space conds ':' newline tab block
-    | 'elif' space conds ':' newline tab block newline elseblock
-    | 'else' ':' newline tab block
+    : 'elif' space conds ':' (newline tab block)+
+    | 'elif' space conds ':' (newline tab block)+ newline elseblock
+    | 'else' ':' (newline tab block)+
     ;
 
 whileblock
