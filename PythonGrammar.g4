@@ -23,8 +23,8 @@ expr: expr ('*' | '/' | '+' | '-' | '%' | ' * '  | ' / ' | ' + ' | ' - ' | ' % '
 
 
 
-variable: ID '=' (STRING | INT | FLOAT) //spacing is broke for some reason
-        | ID '='  CAST '(' (STRING | INT | FLOAT) ')'
+variable: varname ('=' | ' = ' ) type 
+        | varname ('=' | ' = ' ) cast '(' type ')'
         ;
 
 
@@ -49,14 +49,19 @@ whileblock: 'while' conds ':' block
 ;
 
 forblock
-    : 'for' (ID|CHAR) 'in' ID ':' block
+    : 'for' varname 'in' varname ':' block
     ;
 
 type
-    : STR 
+    : STRING 
     | INT 
     | FLOAT 
     | CHAR 
+    | ID
+    ;
+
+varname
+    : CHAR
     | ID
     ;
 
@@ -72,12 +77,13 @@ ctype
     | 'not'
     ;
 
+cast: 'str'
+    | 'int'
+    | 'float'
+    ;
+
 
 NEWLINE : [\n]+;
-CAST    : 'str'
-        | 'int'
-        | 'float'
-        ;
 
 
 
@@ -91,7 +97,6 @@ STRING  : DSTRING
 
 DSTRING : '"' ~('"')+ '"';
 SSTRING : '\'' ~('\'')+ '\'';
-
 STR	: [a-zA-Z]+;
 ID  : [a-zA-Z_][a-zA-Z_0-9]*;
 TAB	: [\t]+;

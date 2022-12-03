@@ -117,6 +117,16 @@ public interface PythonGrammarListener extends ParseTreeListener {
 	 */
 	void exitType(PythonGrammarParser.TypeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#varname}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarname(PythonGrammarParser.VarnameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#varname}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarname(PythonGrammarParser.VarnameContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PythonGrammarParser#ctype}.
 	 * @param ctx the parse tree
 	 */
@@ -126,4 +136,14 @@ public interface PythonGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCtype(PythonGrammarParser.CtypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#cast}.
+	 * @param ctx the parse tree
+	 */
+	void enterCast(PythonGrammarParser.CastContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#cast}.
+	 * @param ctx the parse tree
+	 */
+	void exitCast(PythonGrammarParser.CastContext ctx);
 }

@@ -147,6 +147,18 @@ public class PythonGrammarBaseListener implements PythonGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterVarname(PythonGrammarParser.VarnameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarname(PythonGrammarParser.VarnameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterCtype(PythonGrammarParser.CtypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -154,6 +166,18 @@ public class PythonGrammarBaseListener implements PythonGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCtype(PythonGrammarParser.CtypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCast(PythonGrammarParser.CastContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCast(PythonGrammarParser.CastContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

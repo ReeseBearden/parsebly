@@ -1,13 +1,15 @@
 print(10*2/5)
 print(2/4-10)
 6-1
-var1=2
+x=1
+y=x
+var1 = 2
 var2=str(3)
 var3=str(3)
 var4="john"
-var5=100
+var5 = 100
 if var1 > var2:
-      print(5)
+    print(5)
 elif var1 == var1:
     print(5)
 elif var1 == var1:
@@ -22,3 +24,7 @@ for x in var2:
 """
 block comment
 """
+i=1
+while i < 6:
+  print(i)
+  i+=1
