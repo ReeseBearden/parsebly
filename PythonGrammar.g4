@@ -31,21 +31,45 @@ variable: ID '=' (STRING | INT | FLOAT) //spacing is broke for some reason
 printRule: 'print(' expr ')';
 
 
-
-conds: (STR | INT | FLOAT | CHAR | ID) ('>' | '<' | '>=' | '<=' | '==' | '!=' | '&&' | '||' | '!' | ' > ' | ' < ' | ' >= ' | ' <= ' | ' == ' | ' != ' | ' && ' | ' || ' | ' !') (STR | INT | FLOAT | CHAR)
-	| '('(STR | INT | FLOAT | CHAR | ID) ('>' | '<' | '>=' | '<=' | '==' | '!=' | '&&' | '||' | '!' | ' > ' | ' < ' | ' >= ' | ' <= ' | ' == ' | ' != ' | ' && ' | ' || ' | ' !') (STR | INT | FLOAT | CHAR)')'
+conds: type ctype type
 	;
 
+ifblock
+    : 'if' conds ':' block
+    | 'if' conds ':' block '\n' elseblock
+    ;
 
-ifblock : 'if ' conds ':' NEWLINE TAB (expr | variable | conds) NEWLINE 'else:' NEWLINE TAB (expr | variable | conds)
-	| 'if ' conds ':' NEWLINE TAB (expr | variable | conds)
-	;
+elseblock
+    : 'elif' conds ':' block
+    | 'elif' conds ':' block '\n' elseblock
+    | 'else' ':' block
+    ;
 
 whileblock: 'while' conds ':' block
 ;
 
 forblock
     : 'for' (ID|CHAR) 'in' ID ':' block
+    ;
+
+type
+    : STR 
+    | INT 
+    | FLOAT 
+    | CHAR 
+    | ID
+    ;
+
+ctype
+    : '<'
+    | '<='
+    | '>'
+    | '>='
+    | '=='
+    | '!='
+    | 'and'
+    | 'or'
+    | 'not'
     ;
 
 
@@ -65,10 +89,6 @@ STRING  : DSTRING
         | SSTRING
         ;
 
-
-
-
-
 DSTRING : '"' ~('"')+ '"';
 SSTRING : '\'' ~('\'')+ '\'';
 
@@ -76,6 +96,6 @@ STR	: [a-zA-Z]+;
 ID  : [a-zA-Z_][a-zA-Z_0-9]*;
 TAB	: [\t]+;
 WS  : [ \r\n]+ -> skip; //removes whitespace
-COMMENT : '#' ~[\r\n]* -> skip;
-BLOCKCOMMENT : '"""' .* '"""' -> skip; //wildcard zero or more optional zero or one
+COMMENT : '#' ~[\r\n]* -> skip; //removes everything after # except newline
+BLOCKCOMMENT : '"""' .*? '"""' -> skip; //anything in """ """ is disregarded
 

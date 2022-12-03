@@ -99,6 +99,18 @@ public class PythonGrammarBaseListener implements PythonGrammarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterElseblock(PythonGrammarParser.ElseblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitElseblock(PythonGrammarParser.ElseblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterWhileblock(PythonGrammarParser.WhileblockContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -118,6 +130,30 @@ public class PythonGrammarBaseListener implements PythonGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitForblock(PythonGrammarParser.ForblockContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterType(PythonGrammarParser.TypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitType(PythonGrammarParser.TypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterCtype(PythonGrammarParser.CtypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCtype(PythonGrammarParser.CtypeContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
