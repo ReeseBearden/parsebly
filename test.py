@@ -11,15 +11,15 @@ var5 = 100
 if var1 > var2:
     print(5)
 elif var1 == var1:
-    print(5)
-elif var1 == var1:
-    print(5)
+    print(6)
+elif var1 == var2:
+    print(7)
 else:
-    print(5)
+    print(8)
 while var1 > 1:
-    print(4)
+    print(9)
 for x in var2:
-    print(2)
+    print(10)
 #comment
 """
 block comment
@@ -27,5 +27,7 @@ block comment
 i=1
 while i < 6:
     print("i")
+    print(5)
+    i = 7
 if x and y == 0:
     x = var1

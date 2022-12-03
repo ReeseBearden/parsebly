@@ -146,4 +146,34 @@ public interface PythonGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCast(PythonGrammarParser.CastContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#space}.
+	 * @param ctx the parse tree
+	 */
+	void enterSpace(PythonGrammarParser.SpaceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#space}.
+	 * @param ctx the parse tree
+	 */
+	void exitSpace(PythonGrammarParser.SpaceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#tab}.
+	 * @param ctx the parse tree
+	 */
+	void enterTab(PythonGrammarParser.TabContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#tab}.
+	 * @param ctx the parse tree
+	 */
+	void exitTab(PythonGrammarParser.TabContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#newline}.
+	 * @param ctx the parse tree
+	 */
+	void enterNewline(PythonGrammarParser.NewlineContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#newline}.
+	 * @param ctx the parse tree
+	 */
+	void exitNewline(PythonGrammarParser.NewlineContext ctx);
 }

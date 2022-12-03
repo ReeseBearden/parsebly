@@ -27,32 +27,32 @@ printRule
     ;
 
 variable
-    : varname ('=' | ' = ' ) type 
-    | varname ('=' | ' = ' ) cast '(' type ')'
+    : varname ('=' | ' = ') type 
+    | varname ('=' | ' = ') cast '(' type ')'
     ;
 
 conds
-    : type ctype conds
+    : type space ctype space conds 
     | type
 	;
 
 ifblock
-    : 'if' conds ':' block
-    | 'if' conds ':' block '\n' elseblock
+    : 'if' space conds ':' newline tab block
+    | 'if' space conds ':' newline tab block newline elseblock
     ;
 
 elseblock
-    : 'elif' conds ':' block
-    | 'elif' conds ':' block '\n' elseblock
-    | 'else' ':' block
+    : 'elif' space conds ':' newline tab block
+    | 'elif' space conds ':' newline tab block newline elseblock
+    | 'else' ':' newline tab block
     ;
 
 whileblock
-    : 'while' conds ':' block 
+    : 'while' space conds ':' (newline tab block)+
     ;
 
 forblock
-    : 'for' varname 'in' varname ':' block
+    : 'for' space varname space 'in' space varname ':' (newline tab block)+
     ;
 
 type
@@ -85,8 +85,21 @@ cast: 'str'
     | 'float'
     ;
 
+space 
+    : SPACE
+    | space space
+    ;
 
-NEWLINE : [\n]+;
+tab : TAB
+    | tab tab
+    ;
+
+newline
+    : '\n'
+    | newline newline
+    ;
+
+NEWLINE : '\n'+;
 
 CHAR	: [A-Za-z];
 INT     : [0-9]+;
@@ -99,8 +112,9 @@ STRING  : DSTRING
 DSTRING : '"' ~('"')+ '"';
 SSTRING : '\'' ~('\'')+ '\'';
 STR	: [a-zA-Z]+;
-ID  : [a-zA-Z_][a-zA-Z_0-9]*;
-TAB	: [\t]+;
-WS  : [ \r\n]+ -> skip; //removes whitespace
+ID  : [_a-zA-Z][_a-zA-Z0-9]*;
+TAB	: '  ';
+SPACE: ' ';
+WS  : [\r\n]+ -> skip; //removes whitespace
 COMMENT : '#' ~[\r\n]* -> skip; //removes everything after # except newline
 BLOCKCOMMENT : '"""' .*? '"""' -> skip; //anything in """ """ is disregarded

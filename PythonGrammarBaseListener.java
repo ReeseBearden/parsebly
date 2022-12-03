@@ -178,6 +178,42 @@ public class PythonGrammarBaseListener implements PythonGrammarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCast(PythonGrammarParser.CastContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSpace(PythonGrammarParser.SpaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSpace(PythonGrammarParser.SpaceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTab(PythonGrammarParser.TabContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTab(PythonGrammarParser.TabContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNewline(PythonGrammarParser.NewlineContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNewline(PythonGrammarParser.NewlineContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
