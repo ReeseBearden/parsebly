@@ -14,7 +14,6 @@ block:
 
 //start: ((variable | expr) NEWLINE)*;
 
-
 expr: expr ('*' | '/' | '+' | '-' | '%' | ' * '  | ' / ' | ' + ' | ' - ' | ' % ') expr
     | expr ('=' | '+=' | '-=' | '*=' | '/=' | ' = ' | ' += ' | ' -= ' | ' *= ' | ' /= ') expr 
     | INT
@@ -24,15 +23,17 @@ expr: expr ('*' | '/' | '+' | '-' | '%' | ' * '  | ' / ' | ' + ' | ' - ' | ' % '
 printRule
     :'print' '(' printRule ')'
     | expr
-    | varname
     | STRING
     ;
 
-variable: varname ('=' | ' = ' ) type 
-        | varname ('=' | ' = ' ) cast '(' type ')'
-        ;
+variable
+    : varname ('=' | ' = ' ) type 
+    | varname ('=' | ' = ' ) cast '(' type ')'
+    ;
 
-conds: type ctype type
+conds
+    : type ctype conds
+    | type
 	;
 
 ifblock
@@ -46,8 +47,9 @@ elseblock
     | 'else' ':' block
     ;
 
-whileblock: 'while' conds ':' block
-;
+whileblock
+    : 'while' conds ':' block 
+    ;
 
 forblock
     : 'for' varname 'in' varname ':' block
@@ -86,8 +88,6 @@ cast: 'str'
 
 NEWLINE : [\n]+;
 
-
-
 CHAR	: [A-Za-z];
 INT     : [0-9]+;
 FLOAT   : INT '.' INT;
@@ -104,4 +104,3 @@ TAB	: [\t]+;
 WS  : [ \r\n]+ -> skip; //removes whitespace
 COMMENT : '#' ~[\r\n]* -> skip; //removes everything after # except newline
 BLOCKCOMMENT : '"""' .*? '"""' -> skip; //anything in """ """ is disregarded
-

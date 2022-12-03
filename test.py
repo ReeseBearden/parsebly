@@ -26,7 +26,6 @@ block comment
 """
 i=1
 while i < 6:
-  print("i")
-  i+=1
+    print("i")
 if x and y == 0:
     x = var1
