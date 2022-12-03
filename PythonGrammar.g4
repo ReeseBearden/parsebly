@@ -86,8 +86,9 @@ cast: 'str'
     ;
 
 space 
-    : SPACE
-    | space space
+    : space space
+    | SPACE
+    | TAB
     ;
 
 tab : TAB

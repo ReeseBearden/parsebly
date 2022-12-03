@@ -10,16 +10,17 @@ var4="john"
 var5 = 100
 if var1 > var2:
     print(5)
+    print(4)
 elif var1 == var1:
     print(6)
 elif var1 == var2:
     print(7)
 else:
     print(8)
-while var1 > 1:
+while var1    > 1:
     print(9)
 for x in var2:
-    print(10)
+        print(10)
 #comment
 """
 block comment
