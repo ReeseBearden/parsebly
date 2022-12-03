@@ -19,17 +19,18 @@ expr: expr ('*' | '/' | '+' | '-' | '%' | ' * '  | ' / ' | ' + ' | ' - ' | ' % '
     | expr ('=' | '+=' | '-=' | '*=' | '/=' | ' = ' | ' += ' | ' -= ' | ' *= ' | ' /= ') expr 
     | INT
     | '(' expr ')'
-    | printRule;
+    ;
 
-
+printRule
+    :'print' '(' printRule ')'
+    | expr
+    | varname
+    | STRING
+    ;
 
 variable: varname ('=' | ' = ' ) type 
         | varname ('=' | ' = ' ) cast '(' type ')'
         ;
-
-
-printRule: 'print(' expr ')';
-
 
 conds: type ctype type
 	;

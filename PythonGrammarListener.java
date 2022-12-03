@@ -37,16 +37,6 @@ public interface PythonGrammarListener extends ParseTreeListener {
 	 */
 	void exitExpr(PythonGrammarParser.ExprContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link PythonGrammarParser#variable}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariable(PythonGrammarParser.VariableContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link PythonGrammarParser#variable}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariable(PythonGrammarParser.VariableContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link PythonGrammarParser#printRule}.
 	 * @param ctx the parse tree
 	 */
@@ -56,6 +46,16 @@ public interface PythonGrammarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPrintRule(PythonGrammarParser.PrintRuleContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#variable}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariable(PythonGrammarParser.VariableContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#variable}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariable(PythonGrammarParser.VariableContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link PythonGrammarParser#conds}.
 	 * @param ctx the parse tree
