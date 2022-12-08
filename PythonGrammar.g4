@@ -27,6 +27,10 @@ printRule
     :'print' '(' printRule ')'
     | expr
     | STRING
+    | variable
+    | varname
+    | type
+    | ctype
     ;
 
 variable
@@ -59,7 +63,7 @@ forblock
     ;
 
 functionblock
-    : 'def' STR '(' args '):' '\n' TAB block
+    : 'def ' varname '(' args '):' (newline tab block)+
     ;
 
 args

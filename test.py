@@ -5,8 +5,8 @@ x=1
 y=x
 var1 = 2
 var2=str(3)
-var3=str(3)
-var4="john"
+var3 = str(3)
+var4 = "john"
 var5 = 100
 if var1 > var2:
     print(5)
@@ -37,3 +37,7 @@ while i < 6:
 if x and y == 0:
     x = var1
 test()
+def test(check):
+    x = 4
+    print("hello")
+    print(x + 1)
