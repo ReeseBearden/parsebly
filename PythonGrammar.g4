@@ -10,6 +10,7 @@ block:
     | expr
     | whileblock
     | forblock
+    | returnStatement
     ;
 
 //start: ((variable | expr) NEWLINE)*;
@@ -53,6 +54,23 @@ whileblock
 
 forblock
     : 'for' space varname space 'in' space varname ':' (newline tab block)+
+    ;
+
+functionblock
+    : 'def' STR '(' args '):' '\n' TAB block
+    ;
+
+args
+    : expr (',' expr)*
+    ;
+
+returnStatement
+    : 'return ' expr
+    | 'return ' ID
+    | 'return ' functionblock
+    | 'return ' STR
+    | 'return ' SSTRING
+    | 'return ' RSTRING
     ;
 
 type
@@ -113,9 +131,11 @@ STRING  : DSTRING
 DSTRING : '"' ~('"')+ '"';
 SSTRING : '\'' ~('\'')+ '\'';
 STR	: [a-zA-Z]+;
+
 ID  : [_a-zA-Z][_a-zA-Z0-9]*;
 TAB	: '  ';
 SPACE: ' ';
 WS  : [\r\n]+ -> skip; //removes whitespace
+RSTRING : '\''STR'\'';
 COMMENT : '#' ~[\r\n]* -> skip; //removes everything after # except newline
 BLOCKCOMMENT : '"""' .*? '"""' -> skip; //anything in """ """ is disregarded
