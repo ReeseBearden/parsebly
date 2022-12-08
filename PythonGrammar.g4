@@ -11,6 +11,8 @@ block:
     | whileblock
     | forblock
     | returnStatement
+    | functionCall
+    | functionblock
     ;
 
 //start: ((variable | expr) NEWLINE)*;
@@ -61,7 +63,12 @@ functionblock
     ;
 
 args
-    : expr (',' expr)*
+    : varname? (',' varname?)*
+    | varname? (', ' varname?)*
+    ;
+
+functionCall
+    : STR '(' args ')'
     ;
 
 returnStatement
@@ -84,6 +91,7 @@ type
 varname
     : CHAR
     | ID
+    | STR
     ;
 
 ctype

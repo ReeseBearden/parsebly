@@ -36,3 +36,4 @@ while i < 6:
     i = 7
 if x and y == 0:
     x = var1
+test()

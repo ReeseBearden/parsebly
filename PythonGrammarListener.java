@@ -127,6 +127,16 @@ public interface PythonGrammarListener extends ParseTreeListener {
 	 */
 	void exitArgs(PythonGrammarParser.ArgsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link PythonGrammarParser#functionCall}.
+	 * @param ctx the parse tree
+	 */
+	void enterFunctionCall(PythonGrammarParser.FunctionCallContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link PythonGrammarParser#functionCall}.
+	 * @param ctx the parse tree
+	 */
+	void exitFunctionCall(PythonGrammarParser.FunctionCallContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link PythonGrammarParser#returnStatement}.
 	 * @param ctx the parse tree
 	 */
