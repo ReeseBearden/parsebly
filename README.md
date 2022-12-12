@@ -10,15 +10,15 @@ Reese Bearden
 Set up:
 1. Clone the repo down
 2. Setup ANTLR:
-   A. Download and install ANTLR4: https://www.antlr.org/download/antlr-4.9.2-complete.jar
-   B: Copy the downloaded tool where you usually put third-party java libraries
-   C: add teh tool to your CLASSPATH. Add it to your startup script
+   1. Download and install ANTLR4: https://www.antlr.org/download/antlr-4.9.2-complete.jar
+   2: Copy the downloaded tool where you usually put third-party java libraries
+   3: add teh tool to your CLASSPATH. Add it to your startup script
 2. Execute the following instructions on Linux/Mac OS:
-   A: 'sudo cp antlr-4.9.2-complete.jar /usr/local/lib/'
-   B: add the following to you .bash_profile:
+   1: 'sudo cp antlr-4.9.2-complete.jar /usr/local/lib/'
+   2: add the following to you .bash_profile:
         export CLASSPATH=".:/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH"
         alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.Tool'    
-   C: alias grun='java -Xmx 500M -cp "/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+   3: alias grun='java -Xmx 500M -cp "/usr/local/lib/antlr-4.9.2-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
    
 
 
