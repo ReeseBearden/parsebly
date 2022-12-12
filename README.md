@@ -38,7 +38,7 @@ How to use the parser:
 
    A. Add your valid python code and press command ctrl + D and then a Java applet should launch. In the interface of the Java applet, you'll see the parse tree that was generated based on your input.
 
-
+/n
 The file PythonGrammar.g4 contains the code for the parser. You can reference any of the functions inside of there and test each function individually. In order to do that, in step 3 you would run command 'grun PythonGrammar <function> test.py -gui'. You can see what the functions are named inside of the PythonGrammar.g4 file.
 
 We have a Python file called test.py that exists within the project, we have pre-existing code in there to test the function basics. If you want to add more code in there or modify anything, that's perfectly fine.
