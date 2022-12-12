@@ -11,6 +11,7 @@ Set up:
 1. Clone the repo down
 2. Setup ANTLR:
 
+
    A. Download and install ANTLR4: https://www.antlr.org/download/antlr-4.9.2-complete.jar
    
    B: Copy the downloaded tool where you usually put third-party java libraries
@@ -18,6 +19,7 @@ Set up:
    C: add teh tool to your CLASSPATH. Add it to your startup script
    
 2. Execute the following instructions on Linux/Mac OS:
+
 
    A: 'sudo cp antlr-4.9.2-complete.jar /usr/local/lib/'
    
