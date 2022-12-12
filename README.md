@@ -43,5 +43,5 @@ The file PythonGrammar.g4 contains the code for the parser. You can reference an
 
 We have a Python file called test.py that exists within the project, we have pre-existing code in there to test the function basics. If you want to add more code in there or modify anything, that's perfectly fine.
 
-
+On another note, to see the full output of the parse tree, download antlr4_parse_tree.png. On GitHub it is a dark background, so you'll need to download it and open it in a browser which will automatically apply a white background to the image and rendering a more legible image. 
    
