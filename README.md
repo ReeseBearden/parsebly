@@ -16,7 +16,7 @@ Set up:
    
    B: Copy the downloaded tool where you usually put third-party java libraries
    
-   C: add teh tool to your CLASSPATH. Add it to your startup script
+   C: add the tool to your CLASSPATH. Add it to your startup script
    
 2. Execute the following instructions on Linux/Mac OS:
 
@@ -37,6 +37,7 @@ How to use the parser:
 3. run command 'grun PythonGrammar start test.py -gui'
 
    A. Add your valid python code and press command ctrl + D and then a Java applet should launch. In the interface of the Java applet, you'll see the parse tree that was generated based on your input.
+
 
 The file PythonGrammar.g4 contains the code for the parser. You can reference any of the functions inside of there and test each function individually. In order to do that, in step 3 you would run command 'grun PythonGrammar <function> test.py -gui'. You can see what the functions are named inside of the PythonGrammar.g4 file.
 
