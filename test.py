@@ -40,4 +40,4 @@ test()
 def test(check):
     x = 4
     print("hello")
-    print(x + 1)
+    print(x)
