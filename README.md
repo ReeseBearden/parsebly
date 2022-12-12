@@ -35,6 +35,7 @@ How to use the parser:
 1. run command 'antlr4 PythonGrammar.g4'
 2. run command 'javac PythonGrammar*.java'
 3. run command 'grun PythonGrammar start test.py -gui'
+
    A. Add your valid python code and press command ctrl + D and then a Java applet should launch. In the interface of the Java applet, you'll see the parse tree that was generated based on your input.
 
 
